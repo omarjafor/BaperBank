@@ -6,8 +6,8 @@ document.getElementById('btn-submit').addEventListener('click', function(){
     const password = user_pass.value;
 
     if(email == 'omarjaforchy@gmail.com' && password == '105610'){
-        console.log('Valid User');
+        window.location.href = "bank.html";
     }else{
-        console.log('Invalid User');
+        alert('Invalid User! Wrong email or password');
     }
 })
