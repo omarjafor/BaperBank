@@ -10,6 +10,8 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
         const totalBalance = document.getElementById('totalBalance');
         const totalAmount = parseFloat(totalBalance.innerText);
         totalBalance.innerText = depositAmount + totalAmount;
+    }else{
+        alert('Please Enter Valid Amount')
     }
     depositField.value = '';
 })
@@ -18,17 +20,22 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const withdrawField = document.getElementById('withdraw-field');
     const withdrawAmount = parseFloat(withdrawField.value);
 
+    console.log(withdrawAmount);
+
     const totalBalance = document.getElementById('totalBalance');
     const totalAmount = parseFloat(totalBalance.innerText);
 
-    if (withdrawAmount < totalAmount) {
+    if (withdrawAmount < totalAmount && withdrawAmount >= 500) {
         const withdrawOld = document.getElementById('withdrawTotal');
         const withdrawTotal = parseFloat(withdrawOld.innerText);
         withdrawOld.innerText = withdrawAmount + withdrawTotal;
 
         totalBalance.innerText = totalAmount - withdrawAmount;
-    } else {
-        alert('Not enough money! Check Your Balance!')
+    } else if (withdrawAmount > totalAmount) {
+        alert('Not enough money! Check Your Balance!');
+    }
+    else{
+        alert('Please Enter Valid Amount')
     }
     withdrawField.value = '';
 })
