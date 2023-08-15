@@ -13,3 +13,9 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
     }
     depositField.value = '';
 })
+
+document.getElementById('btn-withdraw').addEventListener('click', function(){
+    const withdrawField = document.getElementById('withdraw-field');
+    const withdrawAmount = parseFloat(withdrawField.value);
+    
+})
